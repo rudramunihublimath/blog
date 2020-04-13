@@ -1,0 +1,42 @@
+{%  extends 'posts/main.html' %}
+
+{% block content %}
+
+
+<br>
+
+<div class="row">
+	<div class="col-md-10">
+		<h5>PETS Details inside Search output:</h5>
+		<a href="{% url 'export_excel' %}" style="margin-left: 50%">Export</a>
+		<hr>
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>name</th>
+					<th>owner</th>
+					<th>species</th>
+					<th>sex</th>
+					<th>birth</th>
+					<th>death</th>
+				</tr>
+				{% for i in pets %}
+							<tr>
+								<td>{{i.name}}</td>
+								<td>{{i.owner}}</td>
+								<td>{{i.species}}</td>
+								<td>{{i.sex}}</td>
+								<td>{{i.birth}}</td>
+								<td>{{i.death}}</td>
+							</tr>
+				{% endfor %}
+
+
+
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
